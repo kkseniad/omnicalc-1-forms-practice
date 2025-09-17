@@ -29,7 +29,31 @@ class PagesController < ApplicationController
     render({:template => "pages_templates/square_root_results"})
   end
 
+  def payment
+    render({:template => "pages_templates/payment"})
+  end
+
+  def payment_results
+    @apr = params.fetch("user_apr").to_f
   
+    @num_years = params.fetch("user_years").to_i
+
+    @principal = params.fetch("user_pv").to_f
+
+    r = @apr / 100 / 12
+
+    n = @num_years * 12
+
+    numerator = r * @principal
+
+    denominator = 1 - 1/((1+r)**n)
+    
+    @payment = numerator/denominator
+    
+    render({:template => "pages_templates/payment_results"})
+  end
+
+
 
 
 
