@@ -29,6 +29,8 @@ class PagesController < ApplicationController
     render({:template => "pages_templates/square_root_results"})
   end
 
+  
+
 
 
 end
