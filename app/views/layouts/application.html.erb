@@ -5,9 +5,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="/icon.png">
+
+    <!-- The official Pico CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.css">
+
+    <!-- The official Bootstrap utilities stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/css/bootstrap-utilities.css">
+
+    <!-- Our modifications to default Pico CSS styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/firstdraft/pico.firstdraft.css@latest/pico.firstdraft.css">
+
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="pico">
+    <header>
+      <div class="container py-2">
+        <nav>
+          <div><a href="/">Calculators</a></div>
+          <div><a href="/square/new">Square Calculator</a></div>
+          <div><a href="/square_root/new">Square Root Calculator</a></div>
+          <div><a href="/payment/new">Payment Calculator</a></div>
+          <div><a href="/random/new">Random Number Generator</a></div>
+        </nav>
+      </div>
+    </header>
+      
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
